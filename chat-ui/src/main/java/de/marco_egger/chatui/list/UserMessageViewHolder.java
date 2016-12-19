@@ -2,6 +2,8 @@ package de.marco_egger.chatui.list;
 
 import android.view.View;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 import de.marco_egger.chatui.R;
 import de.marco_egger.chatui.model.TextMessage;
@@ -26,8 +28,8 @@ public class UserMessageViewHolder extends MessageViewHolder {
 
     @Override
     public void updateUi() {
-        // TODO load avatar image
-        userInitialsView.setText(message.getUsername().substring(0, 1));
+        userInitialsView.setText(message.getUserInitials());
+        Glide.with(avatarView.getContext()).load(message.getUserAvatarUrl()).centerCrop().into(avatarView);
         timestampView.setText(SIMPLE_DATE_FORMATTER.format(message.getTimestamp()));
 
         // If text message

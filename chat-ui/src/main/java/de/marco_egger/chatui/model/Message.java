@@ -37,6 +37,20 @@ public abstract class Message {
         return username;
     }
 
+    /**
+     * Get the users initials.
+     *
+     * @return the initials with 1 or 2 characters
+     */
+    public String getUserInitials() {
+        String[] splits = username.split(" ");
+        if (splits.length > 1) {
+            return splits[0].substring(0, 1) + splits[1].substring(0, 1);
+        } else {
+            return splits[0].substring(0, 1);
+        }
+    }
+
     public String getUserAvatarUrl() {
         return userAvatarUrl;
     }

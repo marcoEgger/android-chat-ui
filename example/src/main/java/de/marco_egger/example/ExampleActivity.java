@@ -15,10 +15,10 @@ public class ExampleActivity extends AppCompatActivity {
 
         ChatMessagesFragment fragment = (ChatMessagesFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
-        fragment.addMessage(new TextMessage(1234567L, MessageSource.LOCAL_USER, 666, "Fenix", "avatarURL", 1463657595000L, "Hallo!"));
-        fragment.addMessage(new TextMessage(1234568L, MessageSource.LOCAL_USER, 666, "Fenix", "avatarURL", 1482147195000L, "Was geht?"));
-        fragment.addMessage(new TextMessage(1234560L, MessageSource.LOCAL_USER, 666, "Fenix", "avatarURL", 1482161595000L, "Keine Antwort... Man bist du unhöflich"));
+        fragment.addMessage(new TextMessage(1234567L, MessageSource.LOCAL_USER, 666, "Fenix", "https://machura-erdem.de/demo/app/wp-content/uploads/2016/10/article-image-upload-9.jpg", 1463657595000L, "Hallo!"));
+        fragment.addMessage(new TextMessage(1234568L, MessageSource.LOCAL_USER, 666, "Fenix", "https://machura-erdem.de/demo/app/wp-content/uploads/2016/10/article-image-upload-9.jpg", 1482147195000L, "Was geht?"));
+        fragment.addMessage(new TextMessage(1234560L, MessageSource.LOCAL_USER, 666, "Fenix", "https://machura-erdem.de/demo/app/wp-content/uploads/2016/10/article-image-upload-9.jpg", 1482161595000L, "Keine Antwort... Man bist du unhöflich"));
 
-        fragment.addMessage(new TextMessage(1234560L, MessageSource.REMOTE_USER, 789, "Serious Vendor", "avatarURL2", 1482161695000L, "Doch, sry hab die Nachrichten leider nicht bekommen!"));
+        fragment.addMessage(new TextMessage(1234560L, MessageSource.REMOTE_USER, 789, "Serious Vendor", "https://machura-erdem.de/demo/app/wp-content/uploads/2016/06/profile-picture.jpg", 1482161695000L, "Doch, sry hab die Nachrichten leider nicht bekommen!"));
     }
 }
