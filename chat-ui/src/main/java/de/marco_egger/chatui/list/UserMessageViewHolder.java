@@ -1,12 +1,13 @@
 package de.marco_egger.chatui.list;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 import de.marco_egger.chatui.R;
 import de.marco_egger.chatui.model.TextMessage;
+import de.marco_egger.chatui.utils.DateUtils;
 
 /**
  * @author Marco Egger
@@ -28,9 +29,12 @@ public class UserMessageViewHolder extends MessageViewHolder {
 
     @Override
     public void updateUi() {
+        Context c = itemView.getContext();
+
+        // Map data to view
         userInitialsView.setText(message.getUserInitials());
-        Glide.with(avatarView.getContext()).load(message.getUserAvatarUrl()).centerCrop().into(avatarView);
-        timestampView.setText(SIMPLE_DATE_FORMATTER.format(message.getTimestamp()));
+        Glide.with(c).load(message.getUserAvatarUrl()).centerCrop().into(avatarView);
+        timestampView.setText(DateUtils.timestampToString(c, message.getTimestamp()));
 
         // If text message
         if (message instanceof TextMessage) {
