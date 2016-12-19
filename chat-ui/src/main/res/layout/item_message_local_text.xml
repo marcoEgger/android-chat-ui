@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/message_bubble_margin_top">
+
+    <FrameLayout
+        android:id="@+id/avatar_layout"
+        style="@style/AppTheme.AvatarLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:id="@+id/user_initials"
+            style="@style/AppTheme.UserInitials"
+            tools:text="JF"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/message_layout"
+        style="@style/AppTheme.MessageLayout"
+        android:layout_toLeftOf="@id/avatar_layout"
+        android:layout_toStartOf="@id/avatar_layout">
+
+        <TextView
+            android:id="@+id/message"
+            style="@style/AppTheme.TextMessage"
+            tools:text="In need of pizza. Can you help?"/>
+
+        <TextView
+            android:id="@+id/timestamp"
+            style="@style/AppTheme.Timestamp"
+            tools:text="12:29"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
