@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-    android:layout_marginStart="@dimen/activity_horizontal_margin"
-    android:layout_marginTop="@dimen/message_bubble_margin_top">
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/message_padding_bottom"
+    android:clipToPadding="false"
+    tools:ignore="RtlSymmetry">
 
     <FrameLayout
         android:id="@+id/avatar_layout"
@@ -35,7 +37,7 @@
         <TextView
             android:id="@+id/message"
             style="@style/AppTheme.TextMessage"
-            tools:text="In need of pizza. Can you help?"/>
+            tools:text="In need of pizza very fast. Can you help?"/>
 
         <TextView
             android:id="@+id/timestamp"

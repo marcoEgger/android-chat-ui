@@ -6,4 +6,5 @@
 
     <color name="colorDarkBlue">#1a3042</color>
     <color name="colorWhiteRipple">#2f000000</color>
+    <color name="colorElevationFallback">#0f000000</color>
 </resources>
