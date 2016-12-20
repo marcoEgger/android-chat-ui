@@ -31,7 +31,8 @@
     <style name="AppTheme.MessageLayout" parent="">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/shape_rounded_rectangle_white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/clickable_white_rounded_rectangle</item>
         <item name="android:orientation">vertical</item>
         <item name="android:padding">8dp</item>
     </style>

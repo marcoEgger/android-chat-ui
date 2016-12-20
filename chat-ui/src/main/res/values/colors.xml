@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorDarkBlue">#1a3042</color>
+    <color name="colorWhiteRipple">#2f000000</color>
 </resources>
