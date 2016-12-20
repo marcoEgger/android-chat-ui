@@ -3,6 +3,7 @@ package de.marco_egger.chatui.list.viewholders;
 import android.view.View;
 import android.widget.TextView;
 import de.marco_egger.chatui.R;
+import de.marco_egger.chatui.interfaces.OnMessageInteractionListener;
 import de.marco_egger.chatui.model.TextMessage;
 
 /**
@@ -12,7 +13,7 @@ public class SystemMessageViewHolder extends MessageViewHolder {
 
     private TextView messageView;
 
-    public SystemMessageViewHolder(View itemView, OnChatMessageInteractionListener listener) {
+    public SystemMessageViewHolder(View itemView, OnMessageInteractionListener listener) {
         super(itemView, listener);
 
         messageView = (TextView) itemView.findViewById(R.id.message);

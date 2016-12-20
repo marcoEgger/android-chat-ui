@@ -5,4 +5,7 @@
     <string name="time_placeholder">%1$02d:%2$02d</string>
     <string name="yesterday_time_placeholder">Yesterday, %1$02d:%2$02d</string>
     <string name="date_placeholder">%1$02d.%2$02d.%3$d</string>
+
+    <!-- Other strings -->
+    <string name="write_a_message">Write a message…</string>
 </resources>

@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<de.marco_egger.chatui.list.MessageList
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chat_background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent">
+
+    <de.marco_egger.chatui.list.MessageList
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/new_message_layout"/>
+
+    <RelativeLayout
+        android:id="@+id/new_message_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:clipToPadding="false">
+
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/fab_send"
+            android:layout_toLeftOf="@+id/fab_send"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_centerVertical="true"
+            android:inputType="text"
+            android:hint="@string/write_a_message"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_menu_send"
+            app:fabSize="normal"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

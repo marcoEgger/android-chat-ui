@@ -3,6 +3,7 @@ package de.marco_egger.chatui.list.viewholders;
 import android.annotation.SuppressLint;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import de.marco_egger.chatui.interfaces.OnMessageInteractionListener;
 import de.marco_egger.chatui.list.MessageAdapter;
 import de.marco_egger.chatui.model.Message;
 
@@ -20,13 +21,13 @@ public abstract class MessageViewHolder extends RecyclerView.ViewHolder {
 
     protected Message message;
 
-    public MessageViewHolder(View itemView, final OnChatMessageInteractionListener listener) {
+    public MessageViewHolder(View itemView, final OnMessageInteractionListener listener) {
         super(itemView);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onChatMessageClicked(message);
+                listener.onMessageClicked(message);
             }
         });
     }
@@ -41,15 +42,4 @@ public abstract class MessageViewHolder extends RecyclerView.ViewHolder {
      */
     public abstract void updateUi();
 
-    /**
-     * An interaction listener for some click events.
-     */
-    public interface OnChatMessageInteractionListener {
-        /**
-         * This is called when the user clicks on a {@link Message}.
-         *
-         * @param message the message the user clicked on
-         */
-        void onChatMessageClicked(Message message);
-    }
 }

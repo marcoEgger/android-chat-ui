@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import de.marco_egger.chatui.R;
+import de.marco_egger.chatui.interfaces.OnMessageInteractionListener;
 import de.marco_egger.chatui.list.viewholders.MessageViewHolder;
 import de.marco_egger.chatui.list.viewholders.SystemMessageViewHolder;
 import de.marco_egger.chatui.list.viewholders.UserMessageViewHolder;
@@ -21,10 +22,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
     private static final int VIEW_TYPE_REMOTE_USER = 2;
     private static final int VIEW_TYPE_SYSTEM = 3;
 
-    private MessageViewHolder.OnChatMessageInteractionListener listener;
+    private RecyclerView list;
+    private OnMessageInteractionListener listener;
     private ArrayList<Message> messages;
 
-    public MessageAdapter(final MessageViewHolder.OnChatMessageInteractionListener listener) {
+    public MessageAdapter(MessageList list, final OnMessageInteractionListener listener) {
+        this.list = list;
         this.listener = listener;
         this.messages = new ArrayList<>();
     }
@@ -86,6 +89,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
 
     public void addMessage(Message message) {
         messages.add(message);
-        notifyItemInserted(messages.size());
+        notifyItemInserted(messages.size() - 1);
+        list.scrollToPosition(messages.size() - 1);
     }
 }

@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import de.hdodenhof.circleimageview.CircleImageView;
 import de.marco_egger.chatui.R;
+import de.marco_egger.chatui.interfaces.OnMessageInteractionListener;
 import de.marco_egger.chatui.model.TextMessage;
 import de.marco_egger.chatui.utils.DateUtils;
 
@@ -19,7 +20,7 @@ public class UserMessageViewHolder extends MessageViewHolder {
     private TextView messageView;
     private TextView timestampView;
 
-    public UserMessageViewHolder(View itemView, OnChatMessageInteractionListener listener) {
+    public UserMessageViewHolder(View itemView, OnMessageInteractionListener listener) {
         super(itemView, listener);
         userInitialsView = (TextView) itemView.findViewById(R.id.user_initials);
         avatarView = (CircleImageView) itemView.findViewById(R.id.avatar);
