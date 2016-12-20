@@ -5,6 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import de.marco_egger.chatui.R;
+import de.marco_egger.chatui.list.viewholders.MessageViewHolder;
+import de.marco_egger.chatui.list.viewholders.SystemMessageViewHolder;
+import de.marco_egger.chatui.list.viewholders.UserMessageViewHolder;
 import de.marco_egger.chatui.model.Message;
 
 import java.util.ArrayList;
@@ -43,7 +46,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
                 return new UserMessageViewHolder(v, listener);
 
             case VIEW_TYPE_SYSTEM:
-                return null;
+                v = LayoutInflater
+                        .from(parent.getContext())
+                        .inflate(R.layout.item_message_system, parent, false);
+                return new SystemMessageViewHolder(v, listener);
 
             default:
                 return null;

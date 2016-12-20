@@ -1,4 +1,4 @@
-package de.marco_egger.chatui.list;
+package de.marco_egger.chatui.list.viewholders;
 
 import android.content.Context;
 import android.view.View;

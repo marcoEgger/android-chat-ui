@@ -1,8 +1,9 @@
-package de.marco_egger.chatui.list;
+package de.marco_egger.chatui.list.viewholders;
 
 import android.annotation.SuppressLint;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import de.marco_egger.chatui.list.MessageAdapter;
 import de.marco_egger.chatui.model.Message;
 
 import java.text.SimpleDateFormat;

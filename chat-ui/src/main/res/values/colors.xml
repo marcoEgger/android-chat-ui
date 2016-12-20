@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorDarkBlue">#1a3042</color>
+    <color name="colorLightBlue">#b3c9db</color>
+    <color name="colorLightBlueElevationFallback">#9ab0c2</color>
     <color name="colorWhiteRipple">#2f000000</color>
-    <color name="colorElevationFallback">#0f000000</color>
+    <color name="colorWhiteElevationFallback">#0f000000</color>
 </resources>

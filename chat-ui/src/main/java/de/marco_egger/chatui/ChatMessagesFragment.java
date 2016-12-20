@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import de.marco_egger.chatui.list.MessageAdapter;
 import de.marco_egger.chatui.list.MessageList;
-import de.marco_egger.chatui.list.MessageViewHolder;
+import de.marco_egger.chatui.list.viewholders.MessageViewHolder;
 import de.marco_egger.chatui.model.Message;
 
 /**
