@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ChatUI</string>
 
     <!-- Strings related to the timestamp -->
     <string name="time_placeholder">%1$02d:%2$02d</string>
-    <string name="yesterday_time_placeholder">Yesterday, %1$02d:%2$02d</string>
+    <string name="yesterday_time_placeholder">Gestern, %1$02d:%2$02d</string>
     <string name="date_placeholder">%1$02d.%2$02d.%3$d</string>
 </resources>
