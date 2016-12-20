@@ -20,6 +20,9 @@ public class ExampleActivity extends AppCompatActivity {
         fragment = (ChatMessagesFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.fragment);
 
+        // ====== Styling =======
+        fragment.setStyle(R.style.AppTheme_MyChatUi);
+
         // ====== Adding messages =======
 
         // Add local messages

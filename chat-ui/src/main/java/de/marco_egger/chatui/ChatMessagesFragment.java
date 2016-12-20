@@ -1,11 +1,14 @@
 package de.marco_egger.chatui;
 
+import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +61,32 @@ public class ChatMessagesFragment extends Fragment implements OnMessageInteracti
             }
         });
 
+        // Set the style
+        setStyle(R.style.ChatUiTheme);
+
         return v;
+    }
+
+    /**
+     * Customize the style.
+     *
+     * @param style the new style
+     */
+    public void setStyle(int style) {
+        TypedArray ta = getActivity().obtainStyledAttributes(style, R.styleable.ChatUiTheme);
+
+        // Get send drawable
+        Drawable sendDrawable = ta.getDrawable(R.styleable.ChatUiTheme_srcSendDrawable);
+        if (sendDrawable != null) {
+            fabSend.setImageDrawable(sendDrawable);
+        }
+
+        // Set send button color
+        int sendBackgroundColor = ta.getColor(R.styleable.ChatUiTheme_sendBackgroundColor,
+                ContextCompat.getColor(getContext(), R.color.colorDarkBlue));
+        fabSend.setBackgroundTintList(ColorStateList.valueOf(sendBackgroundColor));
+
+        ta.recycle();
     }
 
     @Override

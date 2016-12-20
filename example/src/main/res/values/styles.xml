@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.MyChatUi">
+        <item name="srcSendDrawable">@android:drawable/ic_input_add</item>
+        <item name="sendBackgroundColor">@color/colorPrimary</item>
+    </style>
+
 </resources>

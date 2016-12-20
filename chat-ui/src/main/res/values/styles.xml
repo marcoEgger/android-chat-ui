@@ -1,15 +1,14 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="ChatUiTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <!-- Chat message styles -->
-    <style name="AppTheme.AvatarLayout" parent="">
+    <style name="ChatUiTheme.AvatarLayout">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
@@ -18,7 +17,7 @@
         <item name="android:background">@drawable/shape_oval_dark_blue</item>
     </style>
 
-    <style name="AppTheme.UserInitials" parent="">
+    <style name="ChatUiTheme.UserInitials">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
@@ -28,7 +27,7 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="AppTheme.MessageLayout" parent="">
+    <style name="ChatUiTheme.MessageLayout">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:clickable">true</item>
@@ -37,7 +36,7 @@
         <item name="android:padding">8dp</item>
     </style>
 
-    <style name="AppTheme.TextMessage" parent="">
+    <style name="ChatUiTheme.TextMessage">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">start</item>
@@ -45,7 +44,7 @@
         <item name="android:autoLink">web</item>
     </style>
 
-    <style name="AppTheme.Timestamp" parent="">
+    <style name="ChatUiTheme.Timestamp">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">4dp</item>
