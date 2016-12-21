@@ -5,12 +5,11 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#1a3042</item>
     </style>
 
     <style name="AppTheme.MyChatUi">
-        <item name="srcSendDrawable">@android:drawable/ic_input_add</item>
-        <item name="sendBackgroundColor">@color/colorPrimary</item>
+        <item name="srcSendDrawable">@android:drawable/ic_dialog_email</item>
     </style>
 
 </resources>
