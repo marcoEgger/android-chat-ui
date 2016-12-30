@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import de.marco_egger.chatui.interfaces.OnLoadMoreMessagesListener;
 import de.marco_egger.chatui.interfaces.OnMessageInteractionListener;
 import de.marco_egger.chatui.interfaces.OnSendMessageListener;
 import de.marco_egger.chatui.list.MessageAdapter;
@@ -25,10 +26,13 @@ import de.marco_egger.chatui.model.Message;
  *
  * @author Marco Egger
  */
-public class ChatMessagesFragment extends Fragment implements OnMessageInteractionListener {
+public class ChatMessagesFragment extends Fragment implements
+        OnMessageInteractionListener,
+        OnLoadMoreMessagesListener {
 
     private OnSendMessageListener sendMessageListener;
     private OnMessageInteractionListener messageInteractionListener;
+    private OnLoadMoreMessagesListener moreMessagesListener;
 
     private MessageList list;
     private MessageAdapter adapter;
@@ -44,9 +48,8 @@ public class ChatMessagesFragment extends Fragment implements OnMessageInteracti
 
         // Get list and set adapter
         list = (MessageList) v.findViewById(R.id.list);
-        // Register this fragment as OnMessageInteractionListener, so the ViewHolders can be propagated correctly from
-        // the beginning
-        adapter = new MessageAdapter(list, this);
+        // Register this fragment for both listeners, so the ViewHolders can be propagated correctly from the beginning
+        adapter = new MessageAdapter(list, this, this);
         list.setAdapter(adapter);
 
         // Get "new message" view references
@@ -96,8 +99,46 @@ public class ChatMessagesFragment extends Fragment implements OnMessageInteracti
         }
     }
 
+    @Override
+    public void onLoadMoreMessages() {
+        if (moreMessagesListener != null) {
+            moreMessagesListener.onLoadMoreMessages();
+        }
+    }
+
+    /**
+     * En/disable loading events.
+     *
+     * @param moreMessagesAvailable {@link true} if there are new messages to load, {@code false} otherwise
+     */
+    public void setMoreMessagesAvailable(boolean moreMessagesAvailable) {
+        if (moreMessagesAvailable) {
+            adapter.enableLoading(true);
+        } else {
+            adapter.enableLoading(false);
+        }
+    }
+
+    /**
+     * Add a new message to the end (most recent message) of the conversation.
+     *
+     * @param message the message to add
+     */
     public void addMessage(Message message) {
         adapter.addMessage(message);
+    }
+
+    /**
+     * Add a new message to the start (oldest message) of the conversation.
+     *
+     * @param message the message to add to the start
+     */
+    public void addMessageToStart(Message message) {
+        adapter.addMessageToStart(message);
+    }
+
+    public void notifyNewMessagesLoaded() {
+        adapter.notifyDataLoaded();
     }
 
     /**
@@ -116,6 +157,15 @@ public class ChatMessagesFragment extends Fragment implements OnMessageInteracti
      */
     public void setMessageInteractionListener(@Nullable OnMessageInteractionListener listener) {
         this.messageInteractionListener = listener;
+    }
+
+    /**
+     * Set the listener for loading more messages.
+     *
+     * @param listener the listener to set (can be {@code null})
+     */
+    public void setMoreMessagesListener(@Nullable OnLoadMoreMessagesListener listener) {
+        this.moreMessagesListener = listener;
     }
 
     /**

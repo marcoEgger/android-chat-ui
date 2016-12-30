@@ -1,13 +1,10 @@
 package de.marco_egger.chatui.list.viewholders;
 
-import android.annotation.SuppressLint;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import de.marco_egger.chatui.interfaces.OnMessageInteractionListener;
 import de.marco_egger.chatui.list.MessageAdapter;
 import de.marco_egger.chatui.model.Message;
-
-import java.text.SimpleDateFormat;
 
 /**
  * Basic {@link android.support.v7.widget.RecyclerView.ViewHolder} for the {@link MessageAdapter}.
@@ -15,9 +12,6 @@ import java.text.SimpleDateFormat;
  * @author Marco Egger
  */
 public abstract class MessageViewHolder extends RecyclerView.ViewHolder {
-
-    @SuppressLint("SimpleDateFormat")
-    protected static final SimpleDateFormat SIMPLE_DATE_FORMATTER = new SimpleDateFormat("dd.MM.yyyy HH:mm");
 
     protected Message message;
 
