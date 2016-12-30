@@ -15,6 +15,7 @@ import de.marco_egger.chatui.utils.DateUtils;
  */
 public class UserMessageViewHolder extends MessageViewHolder {
 
+    private View avatarLayout;
     private TextView userInitialsView;
     private CircleImageView avatarView;
     private TextView messageView;
@@ -22,6 +23,7 @@ public class UserMessageViewHolder extends MessageViewHolder {
 
     public UserMessageViewHolder(View itemView, OnMessageInteractionListener listener) {
         super(itemView, listener);
+        avatarLayout = itemView.findViewById(R.id.avatar_layout);
         userInitialsView = (TextView) itemView.findViewById(R.id.user_initials);
         avatarView = (CircleImageView) itemView.findViewById(R.id.avatar);
         messageView = (TextView) itemView.findViewById(R.id.message);
@@ -31,6 +33,9 @@ public class UserMessageViewHolder extends MessageViewHolder {
     @Override
     public void updateUi() {
         Context c = itemView.getContext();
+
+        // Hide the user initials and avatar image view when the previous message is from the same source
+        avatarLayout.setVisibility(previousSource == message.getSource() ? View.INVISIBLE : View.VISIBLE);
 
         // Map data to view
         userInitialsView.setText(message.getUserInitials());

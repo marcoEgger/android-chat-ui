@@ -5,6 +5,7 @@ import android.view.View;
 import de.marco_egger.chatui.interfaces.OnMessageInteractionListener;
 import de.marco_egger.chatui.list.MessageAdapter;
 import de.marco_egger.chatui.model.Message;
+import de.marco_egger.chatui.model.MessageSource;
 
 /**
  * Basic {@link android.support.v7.widget.RecyclerView.ViewHolder} for the {@link MessageAdapter}.
@@ -14,6 +15,7 @@ import de.marco_egger.chatui.model.Message;
 public abstract class MessageViewHolder extends RecyclerView.ViewHolder {
 
     protected Message message;
+    protected MessageSource previousSource;
 
     public MessageViewHolder(View itemView, final OnMessageInteractionListener listener) {
         super(itemView);
@@ -26,8 +28,10 @@ public abstract class MessageViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
-    public void setMessage(Message message) {
+    public void setMessage(Message message, Message previous) {
         this.message = message;
+        this.previousSource = previous != null ? previous.getSource() : null;
+
         updateUi();
     }
 
@@ -35,5 +39,4 @@ public abstract class MessageViewHolder extends RecyclerView.ViewHolder {
      * This method is called when a new {@link Message} item is set and should update all view components.
      */
     public abstract void updateUi();
-
 }

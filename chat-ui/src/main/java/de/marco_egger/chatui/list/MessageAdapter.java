@@ -104,8 +104,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
             case VIEW_TYPE_SYSTEM:
                 // If loading is enabled the first message has the position 1 in the adapter, so we need an offset to get the
                 // correct message from the ArrayList
-                // Set the message item into the ViewHolder
-                holder.setMessage(messages.get(position - calculateOffset()));
+                int pos = position - calculateOffset();
+
+                // Pass the message items into the ViewHolder
+                Message previous = (pos - 1 >= 0 && pos - 1 < messages.size()) ? messages.get(pos - 1) : null;
+                holder.setMessage(messages.get(pos), previous);
                 break;
 
             default:
